@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+
+<title>Reusable Form Demo</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+<form class="contact-form" action="" method="post" role="form">
+    <h1>Enseña al puto mono</h1>
+    <input class="form-control" type="text" name="pregunta" id="name" placeholder="Escribe aquí la pregunta" /><br />
+    <input class="form-control" type="text" name="respuesta" id="email" placeholder="Escribe aquí la respuesta" /><br />
+    <button class="btn btn-success form-control" type="submit">Enviar</button>
+</form>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+
+{% for message in messages %}
+{% if "Error" not in message[1]: %}
+<div class="alert alert-info">
+    <strong>Gracias, cabronazo ☻ </strong>
+</div>
+{% endif %}
+
+{% if "Error" in message[1]: %}
+<div class="alert alert-warning">
+    <strong>Rellena todo, hijoputa</strong>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+</div>

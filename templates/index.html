@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <img src="../static/monkey.png" class="shape">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+            <div id="chatbox">
+                
+                <p class="botText"><span>Hola soy un bot, pregúntame algo</span></p>
+            </div>
+            <div id="userInput">
+                <input id="textInput" class="form-control" type="text" name="msg" placeholder="Escribe aquí">
+                <input id="buttonInput" class="btn btn-success form-control" type="submit" value="Enviar">
+            </div>
+        </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <form class="contact-form" action="" method="post" role="form">
+                <h1>Enseña al puto mono</h1>
+                <input class="form-control" type="text" name="pregunta" id="pregunta" placeholder="Escribe aquí la pregunta" /><br />
+                <input class="form-control" type="text" name="respuesta" id="respuesta" placeholder="Escribe aquí la respuesta" /><br />
+                <button class="btn btn-success form-control" id="submit" type="submit">Enviar</button>
+            </form>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+
+{% for message in messages %}
+{% if "Error" not in message[1]: %}
+<div class="alert alert-info">
+    <strong>Gracias, cabronazo <span class="icon-big">☻</span></strong>
+</div>
+{% endif %}
+
+{% if "Error" in message[1]: %}
+<div class="alert alert-warning">
+    <strong>Rellena todo, hijoputa <span class="icon-big">😠</span></strong>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
+        </div>
+        </div>
+        </div>
+    </div>
+{% block script %}
+<script>
+    function getResponse() {
+        let userText = $("#textInput").val();
+        let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
+        $("#textInput").val("");
+        $("#chatbox").append(userHtml);
+        document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+        $.get("/get", { msg: userText }).done(function(data) {
+        var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+        $("#chatbox").append(botHtml);
+        document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+});
+}
+    $("#textInput").keypress(function(e) {
+    //if enter key is pressed
+        if(e.which == 13) {
+            getResponse();
+        }
+    });
+    $("#buttonInput").click(function() {
+        getResponse();
+    });
+    </script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+{% endblock %}
+
+</div>
+</body>
+</html>
