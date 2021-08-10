@@ -6,7 +6,7 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.logic.time_adapter import TimeLogicAdapter
 import json
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
+app.config['SECRET_KEY'] = ''
 #create chatbot
 #englishBot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")
 spanishBot = ChatBot(
