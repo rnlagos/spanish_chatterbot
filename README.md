@@ -4,9 +4,9 @@ I just refactor the chatterbot code, now is in spanish and you can teach the bot
 
 ![Spanish Chatterbot](https://tasarte.app/PDF/mongui.png)
 
-The original code is here: 'https://github.com/gunthercox/chatterbot'.
+The original code is here: 'https://github.com/gunthercox/chatterbot', I add the forms in the html template, refactor app.py to add the functionality and add some lines in the CSS file.
 
-Once the question and answer form is filled in, the data must be processed so that the bot understands it, i.e. convert it from json to yml. For that we will use sed.
+Once the question and answer form is filled in, the output data (json) must be processed so that the bot understands it (yaml). For that we will use sed.
 
 1.- Format the json file and make a .bak file.
 
