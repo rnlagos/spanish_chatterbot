@@ -1,5 +1,25 @@
-# Spanish Chatterbot with learning forms
+# Spanish Chatterbot with teaching forms
 
-I just refactor the chatterbot code to add learning forms for Flask.
+I just refactor the chatterbot code, now is in spanish and you can teach the bot.
 
-The original code is here: 'https://github.com/gunthercox/chatterbot'
+![Spanish Chatterbot](https://tasarte.app/PDF/mongui.png)
+
+The original code is here: 'https://github.com/gunthercox/chatterbot'.
+
+Once the question and answer form is filled in, the data must be processed so that the bot understands it, i.e. convert it from json to yml. For that we will use sed.
+
+1.- Format the json file and make a .bak file.
+
+``sudo sed -i.bak -e 's/^.*nta":/- -/' -e 's/^.*esta":/  -/' -e 's/,$//' -e 's/{$//' -e 's/}$//' -e 's/#.*//;/^$/d' file.json``
+
+2.-  Make a copy in yaml format.
+
+``sudo sed -n '/categories/,$w learn.yml' file.json``
+
+3.- We need now to make a symlink fot the corpus.
+
+``sudo ln -s /var/www/html/chatbot/learn.yml /usr/local/lib/python3.8/dist-packages/chatterbot_corpus/data/spanish/learn.yml``
+
+Yoy can automate all of this with a cron job.
+
+I do it, just for fun and learn.
