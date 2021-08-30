@@ -22,4 +22,4 @@ Once the question and answer form is filled in, the output data (json) must be p
 
 Yoy can automate all of this with a .sh file and a cron job. || Puedes automatzarlo con un .sh y un cron.
 
-I do it just for fun and learn. You can see it in action: 'https:bot.tasarte.app'.
+I do it just for fun and learn. You can see it in action: https:bot.tasarte.app.
