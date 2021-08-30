@@ -16,7 +16,7 @@ Once the question and answer form is filled in, the output data (json) must be p
 
 ``sudo sed -n '/categories/,$w learn.yml' file.json``
 
-3.- We need now to make a symlink fot the corpus. || Hago un symlink a la carpeta con los cuerpos (catterbot_corpus/data/spanish)
+3.- We need now to make a symlink fot the corpus. || Hago un symlink a la carpeta con los cuerpos (chatterbot_corpus/data/spanish)
 
 ``sudo ln -s /var/www/html/chatbot/learn.yml /usr/local/lib/python3.8/dist-packages/chatterbot_corpus/data/spanish/learn.yml``
 
