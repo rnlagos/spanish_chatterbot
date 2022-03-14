@@ -2,7 +2,7 @@
 
 I just refactor the chatterbot code, now can speak in spanish and you can teach the bot.|| He retocado el código de Chatterbot para que entienda el español.
 
-![Spanish Chatterbot](https://tasarte.app/PDF/mongui_b.png)
+![Spanish Chatterbot](https://tasarte.app/PDF/mongui.png)
 
 The original code is here: 'https://github.com/gunthercox/chatterbot', I add the forms in the html template, refactor app.py to add the functionality and add some lines in the CSS file. || El código original lo puedes encontrar aquí: 'https://github.com/gunthercox/chatterbot', he añadido los campos en el template del html y añadido algo de código en el archivo app.py y en los estilos CSS.
 
