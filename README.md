@@ -20,6 +20,6 @@ Once the question and answer form is filled in, the output data (json) must be p
 
 ``sudo ln -s /var/www/html/chatbot/learn.yml /usr/local/lib/python3.8/dist-packages/chatterbot_corpus/data/spanish/learn.yml``
 
-You can automate all of this with a .sh file and a cron job. || Puedes automatizarlo con un .sh y un cron.
+You can automate all of this with a bash file and a cron job. || Puedes automatizarlo con un bash y un cron.
 
 I do it just for fun and learn. You can see it in action: https:bot.tasarte.app.
