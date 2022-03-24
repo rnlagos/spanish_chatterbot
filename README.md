@@ -1,6 +1,6 @@
 # Spanish Chatterbot with teaching forms
 
-I just refactor the chatterbot code, now can speak in spanish and you can teach the bot.|| He retocado el código de Chatterbot para que entienda el español.
+I just refactor the chatterbot code, now can speak in spanish and you can teach the bot.|| He retocado el código de Chatterbot para que entienda el español y que puedas enseñarle.
 
 ![Spanish Chatterbot](https://tasarte.app/PDF/mongui.png)
 
